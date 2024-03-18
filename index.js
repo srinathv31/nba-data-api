@@ -1,6 +1,6 @@
 const PORT = process.env.PORT || 8000;
 const express = require("express");
-
+const pj = require("./package.json");
 const fs = require("fs");
 
 const data = fs.readFileSync("allTeamData.json");
@@ -22,6 +22,10 @@ const middleware = (req, res, next) => {
 
 app.get("/", (req, res) => {
   res.json("Welcome to my NBA Data API");
+});
+
+app.get("/v1/version", (req, res) => {
+  res.json(pj.version);
 });
 
 app.get("/v1/nba/:team/:year", middleware, searchTeamYear);
