@@ -1,5 +1,8 @@
 name: Docker Image CI
 
+env:
+  APP: "nba-data-api"
+
 on:
   push:
     branches: ["master"]

@@ -1,5 +1,8 @@
 name: ci
 
+env:
+  APP: "nba-data-api"
+
 on:
   pull_request:
     branches: ["master"]
