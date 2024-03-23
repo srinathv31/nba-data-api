@@ -6,6 +6,8 @@ env:
 on:
   pull_request:
     branches: ["master"]
+    paths-ignore:
+      - "**/README.md"
 
 jobs:
   docker:
